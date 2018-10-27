@@ -9,6 +9,7 @@ module.exports = class MessageListener extends Listener
 
 	onMessage(user, userID, channelID, message, evt)
 	{
-		
+		console.log(user);
+		console.log(message);
 	}
 }
