@@ -6,6 +6,7 @@ module.exports = class Listener
 	}
 
 	/*
-	
+	*	Child classes will have a callback that will
+	*	be passed to the bot's listener
 	*/
 }
