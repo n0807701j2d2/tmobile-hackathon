@@ -1,0 +1,8 @@
+{
+  "name": "T-Mobile",
+  "version": "1.0.0",
+  "description": "T-Mobile Customer Service System",
+  "main": "main.js",
+  "author": "T-Mobile Hackathon Team",
+  "dependencies": {}
+}

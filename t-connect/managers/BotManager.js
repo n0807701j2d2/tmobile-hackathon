@@ -8,9 +8,10 @@ module.exports = class BotManager
 	static initialize()
 	{
 		bot = new Discord.Client({
-			token: auth.token,
-			autorun: true
+			token: auth.token
 		});
+
+		bot.connect();
 	}
 
 	static addListener(event, callback)
@@ -18,11 +19,13 @@ module.exports = class BotManager
 		bot.on(event, callback);
 	}
 
-	static sendMessage(channel, message)
+	static getBot()
 	{
-		bot.sendMessage({
-			to: channel,
-			message: message
-		});
+		return bot;
+	}
+
+	static deinitialize()
+	{
+		bot.disconnect();
 	}
 }
