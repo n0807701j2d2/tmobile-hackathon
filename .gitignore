@@ -1,3 +1,3 @@
 .DS_Store
 node_modules
-./t-connect/auth.json
+auth.json
