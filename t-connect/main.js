@@ -27,6 +27,19 @@ HTTPManager.initialize(function() {
 		BotManager.addListener(reactionListener.event, reactionListener.onReaction);
 		BotManager.addListener(reactionListener.event, reactionListener.onUnreaction);
 
+		var body = JSON.stringify(BotManager.getBot().servers['505194659602235402'].members);
+		HTTPManager.post('/', body, function alert(data) {
+			result = JSON.parse(data.body.input);
+			for(var n in result){
+				console.log({
+					Id_no: result[n].id,
+					Name: result[n].nick,
+					Number: result[n].color,
+					Frustration: "50"
+				});
+			}
+		});
+
 		function exit()
 		{
 			if(!closing)
