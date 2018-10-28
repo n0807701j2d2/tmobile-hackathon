@@ -87,6 +87,9 @@ module.exports = class ChannelManager
 								serverID: BotManager.getServerID(),
 								userID: user,
 								channelID: voiceChannel.id,
+							}, function() {
+								MessageManager.sendIntroductionMessage(textChannel.id, user);
+								MessageManager.sendCreationMessage(textChannel.id, user, question);
 							});
 						});
 					});
@@ -162,6 +165,9 @@ module.exports = class ChannelManager
 								serverID: BotManager.getServerID(),
 								userID: user,
 								channelID: voiceChannel.id,
+							}, function() {
+								MessageManager.sendIntroductionMessage(textChannel.id, user);
+								MessageManager.sendCreationMessage(textChannel.id, user, question);
 							});
 						});
 					});

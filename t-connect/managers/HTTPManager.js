@@ -78,4 +78,9 @@ module.exports = class HTTPManager
 			callback(body);
 		});
 	}
+
+	static getURL()
+	{
+		return url;
+	}
 }

@@ -19,7 +19,7 @@ HTTPManager.initialize(function() {
 	BotManager.initialize(function() {	
 		ChannelManager.initialize();
 		UserManager.initialize();
-		//MessageManager.initialize();
+		MessageManager.initialize();
 
 		BotManager.addListener(connectListener.event, connectListener.onConnect);
 		BotManager.addListener(connectListener.event, connectListener.onDisconnect);
