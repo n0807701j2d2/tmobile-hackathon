@@ -99,7 +99,7 @@ module.exports = class MessageManager
 		var message = "<@&" + '505614996689125377' + "> \n";
 		message += "<@" + user + "> has asked a question:\n```";
 		message += question + " ```";
-		message += "More info on the user: " + HTTPManager.getURL() + "/user/" + user;
+		message += "More info on the user: " + HTTPManager.getURL() + "/?user=" + user;
 
 		BotManager.getBot().sendMessage({
 			to: channel,
