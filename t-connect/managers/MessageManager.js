@@ -26,28 +26,30 @@ module.exports = class MessageManager
 		}, function() {
 			BotManager.getBot().getMessages({
 				channelID: channelID,
-				limit: 1
+				limit: 3
 			}, function(err, message) {
 				var messageID = message[0].id;
+				//onsole.log(message[2].reactions[0].emoji);
 
+/*
 				BotManager.getBot().addReaction({
 					channelID: channelID,
 					messageID: messageID,
-					reaction: '5️⃣'
+					reaction: '1⃣'
 				}, function(err, res) {
-					if(err) throw err;
+					//if(err) throw err;
 					BotManager.getBot().addReaction({
 						channelID: channelID,
 						messageID: messageID,
-						reaction: '2️⃣'
+						reaction: '2⃣'
 					}, function(err, res) {
-						if(err) throw err;
+						//if(err) throw err;
 						BotManager.getBot().addReaction({
 							channelID: channelID,
 							messageID: messageID,
-							reaction: '3️⃣'
-						}, function(err, res) {
-							if(err) throw err;
+							reaction: '3⃣'
+						}, function(err, res) {/*
+							//if(err) throw err;
 							BotManager.getBot().addReaction({
 								channelID: channelID,
 								messageID: messageID,
@@ -63,8 +65,8 @@ module.exports = class MessageManager
 								});
 							});
 						});
-					});
-				});
+					});*
+				});*/
 			});
 		});
 	}
