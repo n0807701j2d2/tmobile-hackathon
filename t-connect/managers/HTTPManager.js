@@ -1,6 +1,6 @@
 const request = require('request');
 
-const url = "https://google.com"; // your url
+const url = "https://dw86fwjspk.execute-api.us-west-2.amazonaws.com/dev/vmjytdmkux-dev/myapi/myapi"; // your url
 
 var session;
 
@@ -57,7 +57,7 @@ module.exports = class HTTPManager
 					timeout = true;
 					process.exit();
 				}
-				callback(body);
+				callback(response);
 			});
 		}
 	}
@@ -75,7 +75,7 @@ module.exports = class HTTPManager
 			{
 				throw error;
 			}
-			callback(body);
+			callback(response);
 		});
 	}
 

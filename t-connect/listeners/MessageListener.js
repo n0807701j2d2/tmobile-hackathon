@@ -44,15 +44,13 @@ module.exports = class MessageListener extends Listener
 
 			}
 		}
-		else if(message.indexOf(answeredCommand) == 0 
-			&& (ChannelManager.isQuestionChannel(channelID)
-				|| ChannelManager.isPrivateQuestionChannel(channelID)))
+		else if(message.indexOf(answeredCommand) == 0 && !UserManager.isCustomer(userID)
+			&& (ChannelManager.isQuestionChannel(channelID) || ChannelManager.isPrivateQuestionChannel(channelID)))
 		{
-			ChannelManager.answerQuestion(channelID);
+			MessageManager.sendFinishingMessage(channelID);
 		}
 		else
 		{
-
 		}
 	}
 }
