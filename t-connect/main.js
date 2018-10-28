@@ -15,7 +15,7 @@ messageListener = new (require('./listeners/MessageListener.js'))();
 connectListener = new (require('./listeners/ConnectListener.js'))();
 reactionListener = new (require('./listeners/ReactionListener.js'))();
 
-//HTTPManager.initialize(function() {);
+HTTPManager.initialize(function() {
 	BotManager.initialize(function() {	
 		ChannelManager.initialize();
 		UserManager.initialize();
@@ -42,4 +42,4 @@ reactionListener = new (require('./listeners/ReactionListener.js'))();
 		process.on('SIGUSR1', exit);
 		process.on('SIGUSR2', exit);
 	});
-//});
+});
