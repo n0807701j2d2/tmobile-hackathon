@@ -190,7 +190,7 @@ module.exports = class ChannelManager
 		return false;
 	}
 
-	static isQuestion(id)
+	static isQuestionChannel(id)
 	{
 		for(var channel of ChannelManager.getQuestionChannels())
 		{
@@ -200,7 +200,7 @@ module.exports = class ChannelManager
 		return false;
 	}
 
-	static isPrivateQuestion(id)
+	static isPrivateQuestionChannel(id)
 	{
 		for(var channel of ChannelManager.getPrivateQuestionChannels())
 		{

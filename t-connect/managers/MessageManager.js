@@ -15,6 +15,60 @@ module.exports = class MessageManager
 		});
 	}
 
+	static sendFinishingMessage(channelID)
+	{
+		var message = "**This discussion has been marked complete by the Customer Care Representative!**\n"
+		message += "Please indicate how your experience was and how helpful the discussion was using the reactions.";
+
+		BotManager.getBot().sendMessage({
+			to: channelID,
+			message: message
+		}, function() {
+			BotManager.getBot().getMessages({
+				channelID: channelID,
+				limit: 1
+			}, function(err, message) {
+				var messageID = message[0].id;
+
+				BotManager.getBot().addReaction({
+					channelID: channelID,
+					messageID: messageID,
+					reaction: '5️⃣'
+				}, function(err, res) {
+					if(err) throw err;
+					BotManager.getBot().addReaction({
+						channelID: channelID,
+						messageID: messageID,
+						reaction: '2️⃣'
+					}, function(err, res) {
+						if(err) throw err;
+						BotManager.getBot().addReaction({
+							channelID: channelID,
+							messageID: messageID,
+							reaction: '3️⃣'
+						}, function(err, res) {
+							if(err) throw err;
+							BotManager.getBot().addReaction({
+								channelID: channelID,
+								messageID: messageID,
+								reaction: '4️⃣'
+							}, function(err, res) {
+								if(err) throw err;
+								BotManager.getBot().addReaction({
+									channelID: channelID,
+									messageID: messageID,
+									reaction: '5️⃣'
+								}, function(err, res) {
+									if(err) throw err;
+								});
+							});
+						});
+					});
+				});
+			});
+		});
+	}
+
 	static sendAskingMessage()
 	{
 		var message = "**Greetings T-Mobile Customer!**\n";
